@@ -14,7 +14,9 @@ const clientSchema = new mongoose.Schema({
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Veuillez fournir un email valide']
     },
     phone: String,
-    address: String
+    address: String,
+    isDeleted: { type: Boolean, default: false },
+    deletedAt: { type: Date, default: null }
 }, {
     timestamps: true
 });

@@ -18,7 +18,9 @@ const invoiceSchema = new mongoose.Schema({
         type: String,
         enum: ['impayée', 'payée', 'en retard'],
         default: 'impayée'
-    }
+    },
+    isDeleted: { type: Boolean, default: false },
+    deletedAt: { type: Date, default: null }
 }, {
     timestamps: true
 });

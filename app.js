@@ -7,6 +7,7 @@ require('dotenv').config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRoutes =require('./routes/authRoutes');
+const client = require('./routes/clientRoutes')
 const setupSwagger = require('./config/swagger');
 
 const app = express();
@@ -21,7 +22,8 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/api/auth",authRoutes)
+app.use("/api/auth",authRoutes);
+app.use("/api/clients",client);
 
 
 setupSwagger(app);
